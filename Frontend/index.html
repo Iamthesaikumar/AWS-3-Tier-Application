@@ -1,0 +1,82 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Packers & Movers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Sai Packers & Movers</h1>
+        <p>Safe, Secure & Reliable Moving Services</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#quote">Get Quote</a>
+    </nav>
+
+    <section id="home">
+        <h2>Moving Made Easy</h2>
+        <p>We make your relocation simple, safe and stress-free.</p>
+        <a href="#quote" class="button">Request a Quote</a>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div>Home Shifting</div>
+            <div>Office Relocation</div>
+            <div>Vehicle Transportation</div>
+            <div>Packing & Moving</div>
+        </div>
+    </section>
+
+    <section id="quote">
+        <h2>Request a Free Quote</h2>
+
+        <form id="quoteForm">
+
+            <input type="text" id="customerName"
+                   placeholder="Customer Name" required>
+
+            <input type="tel" id="phone"
+                   placeholder="Phone Number" required>
+
+            <select id="service" required>
+                <option value="">Select Service</option>
+                <option>Home Shifting</option>
+                <option>Office Relocation</option>
+                <option>Vehicle Transportation</option>
+                <option>Packing & Moving</option>
+            </select>
+
+            <input type="text" id="pickup"
+                   placeholder="Pickup Location" required>
+
+            <input type="text" id="destination"
+                   placeholder="Destination" required>
+
+            <input type="date" id="shiftingDate" required>
+
+            <button type="submit">Submit Quote</button>
+
+        </form>
+
+        <p id="quoteMessage"></p>
+    </section>
+
+    <footer>
+        <p>© 2026 Sai Packers & Movers</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
