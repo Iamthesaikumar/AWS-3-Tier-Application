@@ -1,7 +1,10 @@
-```javascript
 document.getElementById("quoteForm").addEventListener("submit", async function (event) {
 
     event.preventDefault();
+
+    const message = document.getElementById("quoteMessage");
+
+    message.innerHTML = "Submitting your quote...";
 
     const quoteData = {
         customerName: document.getElementById("customerName").value,
@@ -12,11 +15,8 @@ document.getElementById("quoteForm").addEventListener("submit", async function (
         shiftingDate: document.getElementById("shiftingDate").value
     };
 
-    const message = document.getElementById("quoteMessage");
-
-    message.textContent = "Submitting your quote...";
-
     try {
+
         const response = await fetch("/api/quotes", {
             method: "POST",
             headers: {
@@ -28,15 +28,30 @@ document.getElementById("quoteForm").addEventListener("submit", async function (
         const result = await response.json();
 
         if (response.ok) {
-            message.textContent = "Quote submitted successfully!";
+
+            message.innerHTML =
+                `<div class="alert alert-success">
+                    Quote submitted successfully! Quote ID: ${result.quoteId}
+                </div>`;
+
             document.getElementById("quoteForm").reset();
+
         } else {
-            message.textContent = result.message || "Failed to submit quote.";
+
+            message.innerHTML =
+                `<div class="alert alert-danger">${result.message}</div>`;
+
         }
 
     } catch (error) {
-        message.textContent = "Unable to connect to backend.";
+
+        message.innerHTML =
+            `<div class="alert alert-danger">
+                Unable to submit quote. Please try again.
+            </div>`;
+
         console.error(error);
+
     }
+
 });
-```

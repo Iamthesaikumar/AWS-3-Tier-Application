@@ -1,0 +1,46 @@
+services:
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Frontend.Dockerfile
+    container_name: saipackers-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always
+
+  backend:
+    build:
+      context: .
+      dockerfile: Backend.Dockerfile
+    container_name: saipackers-backend
+    environment:
+      DB_HOST: database
+      DB_USER: root
+      DB_PASSWORD: Jumavolley@03
+      DB_NAME: saipackers
+    depends_on:
+      database:
+        condition: service_healthy
+    restart: always
+
+  database:
+    image: mysql:8.4
+    container_name: saipackers-database
+    environment:
+      MYSQL_ROOT_PASSWORD: Jumavolley@03
+      MYSQL_DATABASE: saipackers
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./Database/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: always
+
+volumes:
+  mysql_data:

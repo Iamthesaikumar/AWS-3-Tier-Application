@@ -4,79 +4,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Sai Packers & Movers</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>Sai Packers & Movers</h1>
-        <p>Safe, Secure & Reliable Moving Services</p>
-    </header>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top py-3">
+    <div class="container">
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#quote">Get Quote</a>
-    </nav>
+        <a class="navbar-brand fw-bold" href="#">
+            🚚 Sai Packers & Movers
+        </a>
 
-    <section id="home">
-        <h2>Moving Made Easy</h2>
-        <p>We make your relocation simple, safe and stress-free.</p>
-        <a href="#quote" class="button">Request a Quote</a>
-    </section>
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="services">
-            <div>Home Shifting</div>
-            <div>Office Relocation</div>
-            <div>Vehicle Transportation</div>
-            <div>Packing & Moving</div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
         </div>
-    </section>
 
-    <section id="quote">
-        <h2>Request a Free Quote</h2>
+    </div>
+</nav>
 
-        <form id="quoteForm">
+<!-- Hero Section -->
+<section class="bg-primary text-white py-6">
+    <div class="container">
+        <div class="row align-items-center">
 
-            <input type="text" id="customerName"
-                   placeholder="Customer Name" required>
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold">
+                    Safe & Trusted Packers & Movers
+                </h1>
 
-            <input type="tel" id="phone"
-                   placeholder="Phone Number" required>
+                <p class="lead mt-3">
+                    We provide professional Home Relocation, Office Shifting,
+                    Car Transport, Bike Transport and Packing Services
+                    across India.
+                </p>
 
-            <select id="service" required>
-                <option value="">Select Service</option>
-                <option>Home Shifting</option>
-                <option>Office Relocation</option>
-                <option>Vehicle Transportation</option>
-                <option>Packing & Moving</option>
-            </select>
+                <!-- Get Free Quote opens modal -->
+                <button type="button"
+                        class="btn btn-warning btn-lg me-3"
+                        data-bs-toggle="modal"
+                        data-bs-target="#quoteModal">
+                    Get Free Quote
+                </button>
 
-            <input type="text" id="pickup"
-                   placeholder="Pickup Location" required>
+                <a href="tel:+917981810099" class="btn btn-light btn-lg">
+                    Call Now
+                </a>
+            </div>
 
-            <input type="text" id="destination"
-                   placeholder="Destination" required>
+            <div class="col-lg-6 text-center">
+                <img src="assets/images/hero.png"
+                     class="img-fluid rounded shadow"
+                     alt="Packers and Movers">
+            </div>
 
-            <input type="date" id="shiftingDate" required>
+        </div>
+    </div>
+</section>
 
-            <button type="submit">Submit Quote</button>
+<!-- Statistics -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center">
 
-        </form>
+            <div class="col-md-3">
+                <h2 class="fw-bold text-primary">5000+</h2>
+                <p>Happy Customers</p>
+            </div>
 
-        <p id="quoteMessage"></p>
-    </section>
+            <div class="col-md-3">
+                <h2 class="fw-bold text-primary">10+</h2>
+                <p>Years Experience</p>
+            </div>
 
-    <footer>
-        <p>© 2026 Sai Packers & Movers</p>
-    </footer>
+            <div class="col-md-3">
+                <h2 class="fw-bold text-primary">100+</h2>
+                <p>Cities Covered</p>
+            </div>
 
-    <script src="script.js"></script>
+            <div class="col-md-3">
+                <h2 class="fw-bold text-primary">24/7</h2>
+                <p>Customer Support</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="py-5">
+    <div class="container">
+
+        <h2 class="text-center fw-bold mb-5">
+            Our Services
+        </h2>
+
+        <div class="row">
+
+            <div class="col-md-4 mb-4">
+                <div class="card shadow p-4 h-100">
+                    <h4>🏠 Home Relocation</h4>
+                    <p>
+                        Safe household shifting with professional packing and timely delivery.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card shadow p-4 h-100">
+                    <h4>🏢 Office Relocation</h4>
+                    <p>
+                        Office shifting with minimal downtime and complete safety.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card shadow p-4 h-100">
+                    <h4>🚗 Vehicle Transport</h4>
+                    <p>
+                        Secure car and bike transportation across India.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Quote Modal -->
+<div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2 class="modal-title fs-4 fw-bold" id="quoteModalLabel">
+                    Request a Free Quote
+                </h2>
+
+                <button type="button" class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <form id="quoteForm">
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Customer Name</label>
+                            <input type="text" id="customerName"
+                                   class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" id="phone"
+                                   class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Service</label>
+                            <select id="service" class="form-select" required>
+                                <option value="">Select Service</option>
+                                <option>Home Relocation</option>
+                                <option>Office Relocation</option>
+                                <option>Vehicle Transport</option>
+                                <option>Packing & Moving</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Shifting Date</label>
+                            <input type="date" id="shiftingDate"
+                                   class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Pickup Location</label>
+                            <input type="text" id="pickup"
+                                   class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Destination</label>
+                            <input type="text" id="destination"
+                                   class="form-control" required>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">
+                        Submit Quote
+                    </button>
+
+                    <div id="quoteMessage" class="mt-3 text-center"></div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center p-4">
+    <p class="mb-1">
+        © 2026 Sai Packers & Movers
+    </p>
+
+    <p class="mb-0">
+        Hyderabad | +91 7981810099 | info@saipackers.com
+    </p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Quote Form JavaScript -->
+<script src="script.js"></script>
 
 </body>
 </html>
-```
+
