@@ -1,0 +1,15 @@
+
+CREATE DATABASE IF NOT EXISTS saipackers;
+
+USE saipackers;
+
+CREATE TABLE IF NOT EXISTS quotes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_name VARCHAR(100) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    service VARCHAR(100) NOT NULL,
+    pickup VARCHAR(255) NOT NULL,
+    destination VARCHAR(255) NOT NULL,
+    shifting_date DATE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
